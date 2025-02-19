@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>The Story of Joshua the Furry</title>
+	<style>
+		body {
+			background: #000;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			color: white;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 4em;
+			color: #00f;
+			text-shadow: 4px 4px 10px #00f, -4px -4px 10px #00f;
+		}
+
+		.content {
+			font-weight: bold;
+			font-size: 1.5em;
+			padding: 20px;
+			border-radius: 15px;
+			animation: rainbowStroke 5s linear infinite;
+			-webkit-text-stroke: 0.5px rgb(255, 0, 123);
+		}
+
+		@keyframes rainbowStroke {
+			0% {
+				background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+				-webkit-background-clip: text;
+			}
+
+			20% {
+				background: linear-gradient(45deg, orange, yellow, green, cyan, blue, violet, red);
+				-webkit-background-clip: text;
+			}
+
+			40% {
+				background: linear-gradient(45deg, yellow, green, cyan, blue, violet, red, orange);
+				-webkit-background-clip: text;
+			}
+
+			60% {
+				background: linear-gradient(45deg, green, cyan, blue, violet, red, orange, yellow);
+				-webkit-background-clip: text;
+			}
+
+			80% {
+				background: linear-gradient(45deg, cyan, blue, violet, red, orange, yellow, green);
+				-webkit-background-clip: text;
+			}
+
+			100% {
+				background: linear-gradient(45deg, blue, violet, red, orange, yellow, green, cyan);
+				-webkit-background-clip: text;
+			}
+		}
+
+		.button-container {
+			margin-top: 20px;
+		}
+
+		button {
+			padding: 10px 20px;
+			font-size: 1.2em;
+			margin: 10px;
+			border: none;
+			border-radius: 10px;
+			cursor: pointer;
+			background: linear-gradient(45deg, #00f, #f0f);
+			color: white;
+			transition: 0.3s;
+		}
+
+		button:hover {
+			background: linear-gradient(45deg, #f0f, #00f);
+		}
+	</style>
+</head>
+
+<body>
+	<h1>The Story of Joshua the Furry</h1>
+	<div class="content" id="story">
+		Chapter 1, The Beginning of a Long Tail.<br><br>
+		Joshua, grew up as a misfit, who didn’t fit into the world around him. His appearance is what made it hard for
+		people to like him. He was bullied for having ears and a tail like a dog. A creature that went extinct billions of
+		years ago. The story of how Joshua or as people call him “Stinky”, was even born into such a cruel world. A lot of
+		the story is unknown and lost in time but somewhere back trillions of years ago, in the era of what people call
+		humans, he was a human. His dream was to develop a formula for immortality. He successfully developed a formula. How
+		so, you ask? He was searching in the caves for bacteria that could possibly expand life longevity. He mixed this
+		with some genes from other species, which sort of sterilized the weird and unsettling bacteria. Then he added some
+		other chemicals which then he tested the formula in a simulation he’s been creating for years. It seemed as if it
+		would be a successful transformation. He got excited and injected it into himself with no further consideration. He
+		waits, but nothing has changed. He takes a blood sample and looks further into whether or not his body’s biology has
+		changed on a molecular level. He could not check if it changed on an atomic level, as such technology has not been
+		perfected yet. He looks into it and he finds.. Nothing has changed. He thinks, “I must need time to adjust.” He
+		packs up his things and heads home. His mom, named Velma, is a smart woman, who has mastered the dark arts
+		thoroughly and can cast any spell. He drives home, and he asks his mom.. “Do you have a spell for
+		immortality?”.<br><br>
+
+		She pauses for a second, and says.. “The only way someone can directly obtain immortality is from finding some sort
+		of mutated bacteria from some place for example caves, mountains, or even another planet. No one has ever found
+		anything, and even so, it may have negative effects on your body’s biology or transform you into another creature
+		altogether.” He then goes to his room, and falls asleep.. Only to wake up to the sound of banging on his door. He
+		tries to get up, but feels very intimidated and quite ill by something nearby, or on him..? He struggles to get up,
+		and he then has a very excruciating headache, that doesn’t stop pounding. He feels something crawling from his skin,
+		as if there is bugs under his hair, and they are puncturing his scalp to get out. He screams, but no one can hear
+		him. It’s as if, he’s trapped somewhere remotely. No sound ever comes out of his mouth. No one ever comes to check
+		on him. And he reads his clock, it is glitching, as if time is passing. He then looks at his window and its
+		switching from day to night to day to night extremely quickly. He then looks at the door, and sees himself, come and
+		go. More people come and go, unknown people. The world fills up. Technology is advancing and decelerating at the
+		same time. He is then knocked out cold by what feels a puncture in his brain..
+	</div>
+	<div class="button-container">
+		<button onclick="changeChapter(1)">Chapter 1</button>
+		<button onclick="changeChapter(2)">Chapter 2</button>
+	</div>
+
+	<script>
+		const chapters = [
+			`Chapter 1, The Beginning of a Long Tail.<br><br>Joshua, grew up as a misfit...`,
+			`Chapter 2, The Transformation Begins.<br><br>As Joshua wakes up, his body starts to change...`
+		];
+
+		function changeChapter(index) {
+			document.getElementById('story').innerHTML = chapters[index - 1];
+		}
+	</script>
+</body>
+
+</html>
