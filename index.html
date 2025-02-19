@@ -20,44 +20,21 @@
       text-shadow: 4px 4px 10px #00f, -4px -4px 10px #00f;
     }
 
+    .chapter-title {
+      font-size: 3em;
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      -webkit-text-stroke: 1px rgb(255, 0, 123);
+      text-shadow: 4px 4px 10px rgb(255, 0, 123), -4px -4px 10px rgb(255, 0, 123);
+    }
+
     .content {
       font-weight: bold;
       font-size: 1.5em;
       padding: 20px;
       border-radius: 15px;
-      -webkit-text-stroke: 0.5px rgb(255, 0, 123);
-    }
-
-    @keyframes rainbowStroke {
-      0% {
-        background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
-        -webkit-background-clip: text;
-      }
-
-      20% {
-        background: linear-gradient(45deg, orange, yellow, green, cyan, blue, violet, red);
-        -webkit-background-clip: text;
-      }
-
-      40% {
-        background: linear-gradient(45deg, yellow, green, cyan, blue, violet, red, orange);
-        -webkit-background-clip: text;
-      }
-
-      60% {
-        background: linear-gradient(45deg, green, cyan, blue, violet, red, orange, yellow);
-        -webkit-background-clip: text;
-      }
-
-      80% {
-        background: linear-gradient(45deg, cyan, blue, violet, red, orange, yellow, green);
-        -webkit-background-clip: text;
-      }
-
-      100% {
-        background: linear-gradient(45deg, blue, violet, red, orange, yellow, green, cyan);
-        -webkit-background-clip: text;
-      }
+      -webkit-text-stroke: 0.40px rgb(255, 0, 123);
     }
 
     .button-container {
@@ -71,65 +48,115 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      background: linear-gradient(45deg, #2600ff, rgb(136, 0, 255));
+      background: linear-gradient(45deg, rgb(168, 1, 82), rgb(143, 1, 67));
       color: white;
       transition: 0.3s;
-      stroke: #000;
+      -webkit-text-stroke: 0.25px #940121;
+      box-shadow: 0 0 20px #ff2487;
     }
 
     button:hover {
-      background: linear-gradient(45deg, rgb(48, 2, 140), rgb(80, 0, 150));
+      background: linear-gradient(45deg,rgba(255, 0, 123, 0.301), rgba(255, 0, 123, 0.507));
     }
   </style>
 </head>
 
 <body>
   <h1>The Story of Joshua the Furry</h1>
-  <div class="content" id="story">
-    Chapter 1, The Beginning of a Long Tail.<br><br>
-    Joshua, grew up as a misfit, who didn’t fit into the world around him. His appearance is what made it hard for
-    people to like him. He was bullied for having ears and a tail like a dog. A creature that went extinct billions of
-    years ago. The story of how Joshua or as people call him “Stinky”, was even born into such a cruel world. A lot of
-    the story is unknown and lost in time but somewhere back trillions of years ago, in the era of what people call
-    humans, he was a human. His dream was to develop a formula for immortality. He successfully developed a formula. How
-    so, you ask? He was searching in the caves for bacteria that could possibly expand life longevity. He mixed this
-    with some genes from other species, which sort of sterilized the weird and unsettling bacteria. Then he added some
-    other chemicals which then he tested the formula in a simulation he’s been creating for years. It seemed as if it
-    would be a successful transformation. He got excited and injected it into himself with no further consideration. He
-    waits, but nothing has changed. He takes a blood sample and looks further into whether or not his body’s biology has
-    changed on a molecular level. He could not check if it changed on an atomic level, as such technology has not been
-    perfected yet. He looks into it and he finds.. Nothing has changed. He thinks, “I must need time to adjust.” He
-    packs up his things and heads home. His mom, named Velma, is a smart woman, who has mastered the dark arts
-    thoroughly and can cast any spell. He drives home, and he asks his mom.. “Do you have a spell for
-    immortality?”.<br><br>
-
-    She pauses for a second, and says.. “The only way someone can directly obtain immortality is from finding some sort
-    of mutated bacteria from some place for example caves, mountains, or even another planet. No one has ever found
-    anything, and even so, it may have negative effects on your body’s biology or transform you into another creature
-    altogether.” He then goes to his room, and falls asleep.. Only to wake up to the sound of banging on his door. He
-    tries to get up, but feels very intimidated and quite ill by something nearby, or on him..? He struggles to get up,
-    and he then has a very excruciating headache, that doesn’t stop pounding. He feels something crawling from his skin,
-    as if there is bugs under his hair, and they are puncturing his scalp to get out. He screams, but no one can hear
-    him. It’s as if, he’s trapped somewhere remotely. No sound ever comes out of his mouth. No one ever comes to check
-    on him. And he reads his clock, it is glitching, as if time is passing. He then looks at his window and its
-    switching from day to night to day to night extremely quickly. He then looks at the door, and sees himself, come and
-    go. More people come and go, unknown people. The world fills up. Technology is advancing and decelerating at the
-    same time. He is then knocked out cold by what feels a puncture in his brain..
+  <div class="content">
+    <div class="chapter-title" id="chapter-title"></div>
+    <div id="story"></div>
   </div>
   <div class="button-container">
-    <button onclick="changeChapter(1)">Chapter 1</button>
-    <button onclick="changeChapter(2)">Chapter 2</button>
+    <button onclick="prevChapter()">Previous Chapter</button>
+    <button onclick="nextChapter()">Next Chapter</button>
   </div>
 
   <script>
-    const chapters = [
-      `Chapter 1, The Beginning of a Long Tail.<br><br>Joshua, grew up as a misfit...`,
-      `Chapter 2, The Transformation Begins.<br><br>As Joshua wakes up, his body starts to change...`
+    function Chapter1() {
+      return `Joshua, grew up as a misfit, who didn’t fit into the world around him. His appearance is 
+what made it hard for people to like him. He was bullied for having ears and a tail like a dog. 
+A creature that went extinct billions of years ago. The story of how Joshua or as people call 
+him “Stinky”, was even born into such a cruel world. A lot of the story is unknown and lost in 
+time but somewhere back trillions of years ago, in the era of what people call humans, he 
+was a human. His dream was to develop a formula for immortality. He successfully 
+developed a formula. How so, you ask? He was searching in the caves for bacteria that 
+could possibly expand life longevity. He mixed this with some genes from other species, 
+which sort of sterilized the weird and unsettling bacteria. Then he added some other 
+chemicals which then he tested the formula in a simulation he’s been creating for years. It 
+seemed as if it would be a successful transformation. He got excited and injected it into 
+himself with no further consideration. He waits, but nothing has changed. He takes a blood 
+sample and looks further into whether or not his body’s biology has changed on a 
+molecular level. He could not check if it changed on an atomic level, as such technology 
+has not been perfected yet. He looks into it and he finds.. Nothing has changed. He thinks, 
+“I must need time to adjust.” He packs up his things and heads home. His mom, named 
+Velma, is a smart woman, who has mastered the dark arts thoroughly and can cast any 
+spell. He drives home, and he asks his mom.. “Do you have a spell for immortality?”.
+She pauses for a second, and says.. “The only way someone can directly obtain immortality 
+is from finding some sort of mutated bacteria from some place for example caves, 
+mountains, or even another planet. No one has ever found anything, and even so, it may 
+have negative effects on your body’s biology or transform you into another creature 
+altogether.” He then goes to his room, and falls asleep.. Only to wake up to the sound of 
+banging on his door. He tries to get up, but feels very intimidated and quite ill by something 
+nearby, or on him..? He struggles to get up, and he then has a very excruciating headache, 
+that doesn’t stop pounding. He feels something crawling from his skin, as if there is bugs 
+under his hair, and they are puncturing his scalp to get out. He screams, but no one can 
+hear him. It’s as if, he’s trapped somewhere remotely. No sound ever comes out of his 
+mouth. No one ever comes to check on him. And he reads his clock, it is glitching, as if time 
+is passing. He then looks at his window and its switching from day to night to day to night 
+extremely quickly. He then looks at the door, and sees himself, come and go. More people 
+come and go, unknown people. The world fills up. Technology is advancing and 
+decelerating at the same time. He is then knocked out cold by what feels a puncture in his 
+brain..`;
+    }
+
+    function Chapter2() {
+      return `Joshua’s head feels like it’s going to explode at any moment. So much pressure, focused in 
+two areas. He gains enough strength to touch his head while he’s trying to scream. He 
+feels, something.. Puncturing his head. He feels something very furry and fluffy. He then 
+remembers his mom’s words.. “or transform you into another creature”.. Her words course 
+through his head non-stop. Could he have successfully obtained immortality? He’s not 
+sure. Currently, he’s in far too much pain to think about that now. He gets knocked out cold 
+for the second time. This time he feels pain in his back, right above his ass. Blood starts 
+leaking out… This time, the process was rather quick, and he feels better. But, he screams 
+in fear to what had just happened. He feels his ass, and he feels a tail above it and it’s very 
+fluffy. He reaches to his hair, and he feels cat ears. He thinks, “Have I became a real life 
+furry? Did I crack the code to pure immortality?” He is more worried it did the opposite of 
+what it was intended to. He gets up and locks his room door. He gets on his computer and 
+researches, but finds no prior research to this. He shuts down the computer, checks his 
+phone. And sees the time is staying stable at 4:03. It’s unlike how it was earlier, going from 
+1am to 1am the next day in split seconds. He thinks, “Did anything change?”. He was 
+originally going to go to schleep but he goes outside to check on his family. No ones is currently In the house. He thinks, “Maybe they went somewhere.” He then calls them on his cell phone, but when he loads it up, a LOT of slow processing with the device occurs. He calls them, and “someone” he thought picked up the phone but then he hears a voice on the other end.. “This number is no longer in service.” He freezes on the spot. He thinks, “Maybe she changed her phone number.” So, he gets in the car and drives to her work. First, he needs to not draw to much attention and hide his appearance as to not freak the fuck out of someone. He gets a hoodie, and puts a rope around his tail, and tucks it in his hoodie. He then puts on tight pants, and heads out. He is walking to the car, when he see’s.. “Cars in the sky..?” He doesn’t think too much of it, as he could just be in another time in the near future. But then he thinks.. “FUCK IS MY ENTIRE FAMILY DEAD?!” He gets in the car as quick as possible and rushes to her work, violating the speed signs. When he turns out of his house and onto the streets, he sees the streets are like how they would appear in a dystopian society. He is the only one on the road. He speeds as fast as he can knowing, he won’t get caught as police are in the sky, not the ground. He turns and eventually is in the right location.. He rushes inside, and as he thought that.. “This is a dystopian city. Why would anyone even be here.” Either way, he goes inside, and walks into where his mom works. He goes into her room, and finds paper spread all over. He looks at one of the papers and sees the date is 01/03/2195. He freezes in shock. He then screams at the top of his lungs. He then hears a noise, coming from a room.. He then tries running out of that place as fast as he can, but then he captured by something.. or someone..`;
+    }
+
+    function Chapter3() {
+      return 'Work In Progress :3';
+    }
+
+    let currentChapter = 0;
+    const chapters = [Chapter1, Chapter2, Chapter3];
+    const chapterTitles = [
+      "Chapter 1: The Beginning Of a Long Tail.",
+      "Chapter 2: The Transfurmation Commences",
+      "Chapter 3: Pessimistic Theories"
     ];
 
-    function changeChapter(index) {
-      document.getElementById('story').innerHTML = chapters[index - 1];
+    function updateStory() {
+      document.getElementById('chapter-title').innerText = chapterTitles[currentChapter];
+      document.getElementById('story').innerHTML = chapters[currentChapter]();
     }
+
+    function nextChapter() {
+      if (currentChapter < chapters.length - 1) currentChapter++;
+      updateStory();
+    }
+
+    function prevChapter() {
+      if (currentChapter > 0) currentChapter--;
+      updateStory();
+    }
+
+    updateStory();
   </script>
 </body>
 
